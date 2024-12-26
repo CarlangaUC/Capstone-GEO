@@ -14,4 +14,3 @@ t_simulacion = 200
 manager.processes()
 manager.step_run(t_simulacion,sleep_time=0)
 
-#manager.calculate_metrics()

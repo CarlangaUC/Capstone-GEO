@@ -16,7 +16,7 @@
 Este proyecto emplea como base para la modelación del comercio marítimo internacional los paradigmas de simulación basada en agentes y de simulación de eventos discretos. Se diseñaron tres clases para representar los barcos, puertos y rutas, que son los agentes clave en el modelo. Para la SED se utilizó la librería SimPy. Gracias a esto la simulación permite representar cada barco, puerto y ruta como agentes con comportamientos y características definidas, que interactúan en un entorno dinámico modelado en intervalos de tiempo discretos. La simulación incluye eventos clave como el movimiento de los barcos entre los distintos puertos, además del cierre y apertura temporal de puertos y de rutas, con las respectivas consecuencias que generan en el sistema.
 
 ### Clases
-El archivo [agentes.py](clases/agentes.py) contiene las clases de los tres agentes principales de la simulación, listadas a continuación:
+El archivo [agentes.py](/run/clases/agentes.py) contiene las clases de los tres agentes principales de la simulación, listadas a continuación:
 - Ship: clase encargada de representar a un barco. Los siguientes atributos y métodos son los más importantes.
     - env: referencia al Enviroment de SimPy.
     - speed_: float que representa la velocidad base del barco.
@@ -51,7 +51,7 @@ El archivo [agentes.py](clases/agentes.py) contiene las clases de los tres agent
     - open: booleano que indica si la ruta está abierta o no.
 
 ### Manager
-El archivo [manager.py](clases/manager.py) contiene la clase Manager, que se encarga de generar una simulación particular. Los siguientes atributos y métodos son los más importantes.
+El archivo [manager.py](/run/clases/manager.py) contiene la clase Manager, que se encarga de generar una simulación particular. Los siguientes atributos y métodos son los más importantes.
 - env: referencia al Enviroment de SimPy.
 - ships: diccionario donde las llaves son los id's de los barcos y los valores sus instancias asociadas.
 - ports: diccionario donde las llaves son los id's de los puertos y los valores sus instancias asociadas.
@@ -67,19 +67,19 @@ El siguiente diagrama de clases indica la relación entre todas las clases:
 
 ### Input Automático ⚙️
 
-En el archivo [input_auto.py](clases/input_auto.py) se generan aleatoriamente los agentes de la simulación a partir de un número de puertos como input. Se usaron distribuciones uniformes por simplicidad, siempre pensando en que esto puede ser modificado dependiendo del propósito de la empresa. El funcionamiento es el siguiente:
+En el archivo [input_auto.py](/run/clases/input_auto.py) se generan aleatoriamente los agentes de la simulación a partir de un número de puertos como input. Se usaron distribuciones uniformes por simplicidad, siempre pensando en que esto puede ser modificado dependiendo del propósito de la empresa. El funcionamiento es el siguiente:
 
-- generate_agents: Función que se encarga de generar todos los agentes llamando a otras funciones y finalmente retorna diccionarios con instancias de las clases (clases definidas en [agentes.py](clases/agentes.py)) más una matriz de adyacencia de las distancias entre rutas .
+- generate_agents: Función que se encarga de generar todos los agentes llamando a otras funciones y finalmente retorna diccionarios con instancias de las clases (clases definidas en [agentes.py](/run/clases/agentes.py)) más una matriz de adyacencia de las distancias entre rutas .
     - El número de barcos generados se escoge aleatoriamente entre 1 y la capacidad máxima global que pueden almacenar los puertos.
     - También posee un argumento debug el cual por defecto es False. Si se le entrega True se generará un archivo debug.txt el cual retorna la información de todas las entidades generadas.
 
-- gen_ports: Dado un número de puertos genera un diccionario con los puertos aleatorios de la clase [Port](clases/agentes.py#L78), además retorna la suma de todas las capacidades de los puertos.
+- gen_ports: Dado un número de puertos genera un diccionario con los puertos aleatorios de la clase [Port](/run/clases/agentes.py#L78), además retorna la suma de todas las capacidades de los puertos.
     - La capacidad máxima de un puerto individual es un numero aleatorio entre 1 y 50.
 
 - all_routes: Recibe el número de puertos que se quieren generar, retorna una lista con todas las tuplas que representen rutas posibles en la simulación.
     - Podrían existir más rutas de las que se generan, eso es algo que se puede generalizar a partir del código.
 
-- gen_ships: Dado un número de barcos (escogido en generate_agents), un número de puertos y una lista con todas las rutas posibles entre puertos se genera un diccionario con los barcos aleatorios de la clase [Ship](clases/agentes.py#L5). Se asume un id secuencial (0,1,...,num_ships-1), la carga y la velocidad se generan con ciertas funciones basadas en distribuciones uniformes (ver el punto Otros). Además se genera el itinerario con la función gen_itinerary y retorna el diccionario con los barcos y las rutas usadas por los barcos.
+- gen_ships: Dado un número de barcos (escogido en generate_agents), un número de puertos y una lista con todas las rutas posibles entre puertos se genera un diccionario con los barcos aleatorios de la clase [Ship](/run/clases/agentes.py#L5). Se asume un id secuencial (0,1,...,num_ships-1), la carga y la velocidad se generan con ciertas funciones basadas en distribuciones uniformes (ver el punto Otros). Además se genera el itinerario con la función gen_itinerary y retorna el diccionario con los barcos y las rutas usadas por los barcos.
     - Acá se asume que solo van a existir las rutas que se escogieron al azar
     es claro que también uno poddria considerar más rutas, se puede genralizar.
 
@@ -95,7 +95,7 @@ puertos, se verifica no volver a generar un punto aleatorio a un puerto que ya s
 
 - gen_matrix: Dado el número de puertos y clases de rutas se genera la matriz de adyacencia de la simulación la cual tendra las distancias de las rutas.
 
-- Otros: También hay otras funciones como [gen_velocity](/grafo/clases/input_auto.py#L257) cuyo propósito es agregar mayor dinámica o funcionamiento al código. Estas se ubican al final del código del archivo.
+- Otros: También hay otras funciones como [gen_velocity](/run/clases/input_auto.py#L257) cuyo propósito es agregar mayor dinámica o funcionamiento al código. Estas se ubican al final del código del archivo.
 
 ### Visualización 🗺️
 
@@ -140,7 +140,7 @@ ship;nombre;posicion en tiempo t;puerto inicial;puerto final;ID_Barco;ID_ruta
 ### Ejecución 📋
 
 
-Para ejecutar la simulación se debe ejecutar el archivo [main.py](main.py), en el cual se deberá tener en consideración lo siguiente:
+Para ejecutar la simulación se debe ejecutar el archivo [main.py](/run/main.py), en el cual se deberá tener en consideración lo siguiente:
 
 - **Hiperparámetros** : Estos deberan ser escogidos de acuerdo a lo necesitado, lo ínico manual a cambiar es el **n_ports** (número de puertos), los cuales influirían en la cantidad de barcos generados como fue explicado en **Input Automático** y el **t_simulacion** (tiempo de simulación), que indicará la cantidad de tiempo hasta cual la simulación se ejecutará al ser una simulacion discreta.
 

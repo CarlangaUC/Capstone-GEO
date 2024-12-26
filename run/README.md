@@ -61,6 +61,7 @@ El archivo [agentes.py](clases/agentes.py) contiene las clases de los tres agent
 
 ### Manager
 El archivo [manager.py](clases/manager.py) contiene la clase Manager, que se encarga de generar una simulación particular. Los siguientes atributos y métodos son los más importantes.
+
 - env: referencia al Enviroment de SimPy.
 - ships: diccionario donde las llaves son los id's de los barcos y los valores sus instancias asociadas.
 - ports: diccionario donde las llaves son los id's de los puertos y los valores sus instancias asociadas.
@@ -72,7 +73,7 @@ El archivo [manager.py](clases/manager.py) contiene la clase Manager, que se enc
 - step_run(): método que corre la simulación esperando un tiempo determinado entre cada intervalo.
 - calculate_metrics(): Calcula dos metricas una para calcular el tiempo total que demora en cumplir su itinerario cada barco y la otra permite calcular el tiempo de espera total para puertos y rutas al ser recursos. 
     **NOTA** : Las metricas pueden verse afectadas por como generamos los puertos y rutas dado un numero de puertos inicial, de esta manera afectara el tiempo de cumplir itinerario (si sera ciclico o no), las rutas que existiran y el tiempo asociado a estas, ademas del tiempo de simulacion que a mayor tiempo tenderan a cumplir su itinerario como intuitivamente se puede pensar.
-    
+
 El siguiente diagrama de clases indica la relación entre todas las clases:
 ![image](diagrama.png)
 

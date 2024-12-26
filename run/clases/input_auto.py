@@ -212,8 +212,8 @@ def gen_route(env, used_routes):
         routes[route_name] = Route(env, initial_port_id, final_port_id, dist,
                                    capacity, weather, security, regulations)
         
-    for route in routes:
-        print(f"{route}: {routes[route].dist}")
+    
+    
     return routes
 
 def gen_random_point():

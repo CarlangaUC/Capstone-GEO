@@ -63,7 +63,7 @@ El archivo [manager.py](/run/clases/manager.py) contiene la clase Manager, que s
 - step_run(): método que corre la simulación esperando un tiempo determinado entre cada intervalo.
 
 El siguiente diagrama de clases indica la relación entre todas las clases:
-![image](diagrama.png)
+![image](/run/diagrama.png)
 
 ### Input Automático ⚙️
 

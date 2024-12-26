@@ -165,12 +165,13 @@ class Manager:
             self.output()
 
     def calculate_metrics(self):
-
+        
+        print("")
         for ship in self.ships.values():
             total_time = ship.end_time - ship.start_time
             print(f"Barco {ship.ship_id} - "
                   f"Tiempo total itinerario cumplido: {total_time}"
-                  f"unidades de tiempo\n")
+                  f" unidades de tiempo\n")
 
         total_wait_time_routes = sum(ship.total_wait_time_routes for ship in self.ships.values())
         total_wait_time_ports = sum(ship.total_wait_time_ports for ship in self.ships.values())

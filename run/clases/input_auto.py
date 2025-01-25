@@ -128,7 +128,7 @@ def gen_ships(env, num_ships, num_ports, all_routes):
     for ship in range(0, num_ships):
 
         # Generamos un largo del itinerario aleatorio
-        num_tasks = random.randint(2, 20)
+        num_tasks = random.randint(2, 3)
         name = f"Barco {ship}"
         speed = gen_velocity()
         # Generamos un puerto del id aleatorio
@@ -205,6 +205,7 @@ def gen_route(env, used_routes):
         else:
             done.add(route_name)
             dist,sample_points = gen_dist(initial_port_id,final_port_id,sample_points)
+            print(f"distancia generada: {dist}")
         capacity = gen_capacity_route()
         weather = gen_weather()
         security = gen_security()
@@ -237,7 +238,7 @@ def gen_dist(id_in,id_out,sample_points):
     p1 = sample_points[id_in]
     p2 = sample_points[id_out]
 
-    return geodesic(p1,p2).km, sample_points
+    return geodesic(p1,p2).km/1000, sample_points
     
 def gen_matrix(num_ports, routes):
     """

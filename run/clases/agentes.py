@@ -43,12 +43,12 @@ class Ship:
         with open(filename, "a") as file:
             file.write(f"event;ES2;{self.ship_id};{self.actual_port};"
                        f"{self.env.now}\n")
-        print(f"Barco {self.ship_id} descargando...")
+        #print(f"Barco {self.ship_id} descargando...")
         yield self.env.timeout(self.recharge)
 
     def drive(self, final_port, route, filename, matriz_adyacencia):
         with route.resource.request() as request:
-            print(f"{self.name} esperando...")
+        #    print(f"{self.name} esperando...")
             wait_start = self.env.now
             yield request
             self.total_wait_time_routes += self.env.now - wait_start
@@ -59,9 +59,9 @@ class Ship:
                     file.write(f"event;ES1;{self.ship_id};{self.actual_port}-"
                                f"{final_port.port_id};{pos_total};"
                                f"{self.env.now}\n")
-                print(f"{self.name}, ruta {route.route_id}, "
-                      f"posicion: {self.pos}, "
-                      f"tiempo simulacion {self.env.now}")
+        #        print(f"{self.name}, ruta {route.route_id}, "
+        #              f"posicion: {self.pos}, "
+        #              f"tiempo simulacion {self.env.now}")
                 yield self.env.timeout(f_p.UNIT_TIME)
         with final_port.resource.request() as request:
             wait_start = self.env.now

@@ -169,23 +169,26 @@ class Manager:
             self.output()
 
     def calculate_metrics(self):
-        
-        print("")
+        times = [] 
         for ship in self.ships.values():
-            total_time = ship.end_time - ship.start_time
-            print(f"Barco {ship.ship_id} - "
-                  f"Tiempo total itinerario cumplido: {total_time}"
-                  f" unidades de tiempo\n")
+            total_time = abs(ship.end_time - ship.start_time)
+            #total_time = abs(ship.end_time - ship.start_time)
+#            print(f"Barco {ship.ship_id} - "
+#                  f"Tiempo total itinerario cumplido: {total_time}"
+#                  f" unidades de tiempo\n")
+            times.append(total_time)
 
         total_wait_time_routes = sum(ship.total_wait_time_routes for ship in self.ships.values())
         total_wait_time_ports = sum(ship.total_wait_time_ports for ship in self.ships.values())
         num_events = len(self.ships)
         avg_wait_time_routes = total_wait_time_routes / num_events if num_events > 0 else 0
         avg_wait_time_ports = total_wait_time_ports / num_events if num_events > 0 else 0
-        print(f"Tiempo promedio de espera en rutas: "
-              f"{avg_wait_time_routes:.2f} unidades de tiempo\n")
-        print(f"Tiempo promedio de espera en puertos: "
-              f"{avg_wait_time_ports:.2f} unidades de tiempo\n")
+#        print(f"Tiempo promedio de espera en rutas: "
+#              f"{avg_wait_time_routes:.2f} unidades de tiempo\n")
+#        print(f"Tiempo promedio de espera en puertos: "
+#              f"{avg_wait_time_ports:.2f} unidades de tiempo\n")
+        return times 
+
 
     # esta función solo se debe ocupar después de correr la
     # simulación con self.run

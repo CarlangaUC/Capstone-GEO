@@ -1,19 +1,12 @@
-BARCOS GENERADOS:10
+BARCOS GENERADOS:3
 RUTAS GENERADOS: 2
 BARCOS
-Nombre: Barco 0, Velocidad: 90, ID del Puerto: 0, Ciclos: True, Recarga: 7, Itinerario: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-Nombre: Barco 1, Velocidad: 74, ID del Puerto: 0, Ciclos: True, Recarga: 21, Itinerario: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-Nombre: Barco 2, Velocidad: 76, ID del Puerto: 0, Ciclos: False, Recarga: 22, Itinerario: [1, 0, 1, 0, 1]
-Nombre: Barco 3, Velocidad: 61, ID del Puerto: 1, Ciclos: True, Recarga: 17, Itinerario: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
-Nombre: Barco 4, Velocidad: 89, ID del Puerto: 1, Ciclos: False, Recarga: 14, Itinerario: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-Nombre: Barco 5, Velocidad: 72, ID del Puerto: 1, Ciclos: True, Recarga: 12, Itinerario: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
-Nombre: Barco 6, Velocidad: 99, ID del Puerto: 0, Ciclos: False, Recarga: 19, Itinerario: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-Nombre: Barco 7, Velocidad: 36, ID del Puerto: 1, Ciclos: True, Recarga: 23, Itinerario: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
-Nombre: Barco 8, Velocidad: 90, ID del Puerto: 1, Ciclos: True, Recarga: 7, Itinerario: [0, 1]
-Nombre: Barco 9, Velocidad: 41, ID del Puerto: 0, Ciclos: True, Recarga: 9, Itinerario: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+Nombre: Barco 0, Velocidad: 34, ID del Puerto: 0, Ciclos: False, Recarga: 24, Itinerario: [1, 0]
+Nombre: Barco 1, Velocidad: 50, ID del Puerto: 1, Ciclos: False, Recarga: 15, Itinerario: [0, 1, 0]
+Nombre: Barco 2, Velocidad: 80, ID del Puerto: 0, Ciclos: True, Recarga: 6, Itinerario: [1, 0]
 RUTAS
-Puerto Inicial: 0, Puerto Final: 1, Distancia: 12838.255777760585, Clima: 41, Seguridad: 99, Regulaciones: 81
-Puerto Inicial: 1, Puerto Final: 0, Distancia: 12838.255777760585, Clima: 89, Seguridad: 36, Regulaciones: 7
+Puerto Inicial: 0, Puerto Final: 1, Distancia: 6.825453336133388, Clima: 60, Seguridad: 92, Regulaciones: 51
+Puerto Inicial: 1, Puerto Final: 0, Distancia: 6.825453336133388, Clima: 37, Seguridad: 73, Regulaciones: 2
 Puertos
-Puerto: Puerto 0; Capacidad: 47, port:0
-Puerto: Puerto 1; Capacidad: 7, port:1
+Puerto: Puerto 0; Capacidad: 14, port:0
+Puerto: Puerto 1; Capacidad: 9, port:1

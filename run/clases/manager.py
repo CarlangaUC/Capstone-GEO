@@ -14,6 +14,8 @@ class Manager:
         self.ports = {}
         self.routes = {}
         self.filename = f_p.FILE_NAME
+        self.start_time = None
+        self.end_time = None
 
     def search_route(self, actual_port_id, final_port, matriz_adyacencia):
         N = len(matriz_adyacencia)
@@ -121,11 +123,13 @@ class Manager:
             self.env.process(self.ship_event_loop(ship, ship.itinerary))
 
     def run(self, until):
+        self.start_time = time.time()
         self.env.run(until=until)
+        self.final_time = time.time()
 
     def step_run(self, until, sleep_time):
         while self.env.now < until:
-            if not self.env._queue:  
+            if not self.env._queue:
                 break
             self.env.step()
             time.sleep(sleep_time)
@@ -182,6 +186,13 @@ class Manager:
               f"{avg_wait_time_routes:.2f} unidades de tiempo\n")
         print(f"Tiempo promedio de espera en puertos: "
               f"{avg_wait_time_ports:.2f} unidades de tiempo\n")
+
+    # esta función solo se debe ocupar después de correr la
+    # simulación con self.run
+    def elapsed_time(self):
+        if self.start_time is None or self.end_time is None:
+            return None
+        return self.end_time - self.start_time
 
     def output(self):
         with open(self.filename, "a") as file:

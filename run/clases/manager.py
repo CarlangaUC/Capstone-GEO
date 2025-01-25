@@ -169,10 +169,10 @@ class Manager:
             self.output()
 
     def calculate_metrics(self):
-        times = [] 
+        times = []
         for ship in self.ships.values():
             total_time = abs(ship.end_time - ship.start_time)
-            #total_time = abs(ship.end_time - ship.start_time)
+            # total_time = abs(ship.end_time - ship.start_time)
 #            print(f"Barco {ship.ship_id} - "
 #                  f"Tiempo total itinerario cumplido: {total_time}"
 #                  f" unidades de tiempo\n")
@@ -187,7 +187,7 @@ class Manager:
 #              f"{avg_wait_time_routes:.2f} unidades de tiempo\n")
 #        print(f"Tiempo promedio de espera en puertos: "
 #              f"{avg_wait_time_ports:.2f} unidades de tiempo\n")
-        return times 
+        return times
 
 
     # esta función solo se debe ocupar después de correr la

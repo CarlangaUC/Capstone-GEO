@@ -1,9 +1,10 @@
 from clases.agentes import Ship, Port, Route
+from geopy.distance import geodesic
 import numpy as np
 import random
 import math
-from geopy.distance import geodesic 
- 
+
+
 def generate_agents(env, num_ports, debug=False):
     """
     Input:

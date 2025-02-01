@@ -125,14 +125,16 @@ class Manager:
     def run(self, until):
         self.start_time = time.time()
         self.env.run(until=until)
-        self.final_time = time.time()
+        self.end_time = time.time()
 
     def step_run(self, until, sleep_time):
+        self.start_time = time.time()
         while self.env.now < until:
             if not self.env._queue:
                 break
             self.env.step()
             time.sleep(sleep_time)
+        self.end_time = time.time()
 
     def add_ports(self, ports_file):
         for i, port in enumerate(self.ports_generator(ports_file)):
@@ -193,8 +195,6 @@ class Manager:
     # esta función solo se debe ocupar después de correr la
     # simulación con self.run
     def elapsed_time(self):
-        if self.start_time is None or self.end_time is None:
-            return None
         return self.end_time - self.start_time
 
     def output(self):
